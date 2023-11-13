@@ -25,12 +25,14 @@
                   <img src="./images/header/logo-header.svg" alt="logo" /></div
               ></a>
               <ul class="header__nav">
-                <li><a href="#">Как получить займ</a></li>
-                <li><span>Способы получния</span></li>
-                <li><span>Почему мы</span></li>
-                <li><span>Отзывы</span></li>
-                <li><span>Вопрос-ответ</span></li>
-                <li><span>Контакты</span></li>
+                <li><span data-anchor="get-loan">Как получить займ</span></li>
+                <li>
+                  <span data-anchor="payment-cards">Способы получния</span>
+                </li>
+                <li><span data-anchor="features">Почему мы</span></li>
+                <li><span data-anchor="reviews">Отзывы</span></li>
+                <li><span data-anchor="questions">Вопрос-ответ</span></li>
+                <li><a href="#">Контакты</a></li>
               </ul>
               <a class="header__button image shadow" href="#"
                 ><img src="./images/header/user.svg" alt="user"
@@ -80,11 +82,22 @@
           <div class="container">
             <div class="header-mobile__body-container">
               <div class="header-mobile__actions">
-                <a class="header-mobile__action">Способы получения займа</a>
-                <span class="header-mobile__action">Почему мы</span>
-                <span class="header-mobile__action">отзывы</span>
-                <span class="header-mobile__action">Вопросы-ответы</span>
-                <span class="header-mobile__action">Контакты</span>
+                <span class="header-mobile__action" data-anchor="get-loan"
+                  >Как получить займ</span
+                >
+                <span class="header-mobile__action" data-anchor="payment-cards"
+                  >Способы получения займа</span
+                >
+                <span class="header-mobile__action" data-anchor="features"
+                  >Почему мы</span
+                >
+                <span class="header-mobile__action" data-anchor="reviews"
+                  >отзывы</span
+                >
+                <span class="header-mobile__action" data-anchor="questions"
+                  >Вопросы-ответы</span
+                >
+                <a class="header-mobile__action" href="#">Контакты</a>
               </div>
               <div class="header-mobile__image">
                 <img src="./images/header-mobile/icons_01.svg" alt="icons" />
@@ -164,14 +177,16 @@
             <div class="container">
               <picture
                 ><source
-                  srcset="./images/index/image_01.png"
+                  srcset="./images/index/image-features/image_01.png"
                   type="image/png"
                   media="(min-width: 576px)" />
-                <img src="./images/index/image_01-mobile.png" alt="image"
+                <img
+                  src="./images/index/image-features/image_01-mobile.png"
+                  alt="image"
               /></picture>
             </div>
           </div>
-          <div class="index__get-loan get-loan">
+          <div class="index__get-loan get-loan" data-anchor-target="get-loan">
             <div class="container">
               <div class="get-loan__wrapper">
                 <div class="index__title"><h2>как получить займ</h2></div>
@@ -198,7 +213,10 @@
               </div>
             </div>
           </div>
-          <div class="index__payment-cards payment-cards">
+          <div
+            class="index__payment-cards payment-cards"
+            data-anchor-target="payment-cards"
+          >
             <div class="container">
               <div class="payment-cards__wrapper">
                 <div class="index__title"><h2>способы получения займа</h2></div>
@@ -228,7 +246,7 @@
               </div>
             </div>
           </div>
-          <div class="index__features features">
+          <div class="index__features features" data-anchor-target="features">
             <div class="container">
               <div class="features__wrapper">
                 <div class="index__title">
@@ -273,9 +291,479 @@
               </div>
             </div>
           </div>
+          <div class="index__application">
+            <div class="container">
+              <div class="index__application-wrapper">
+                <div class="index__title">
+                  <h2>Одна заявка во все МФО</h2>
+                  <span
+                    >Благодаря тесному сотрудничеству с кредитными организациями
+                    и большой экспертизе в сфере микрофинансов, сервис
+                    предоставляет самые выгодные и актуальные кредитные
+                    предложения на рынке.</span
+                  >
+                  <span
+                    >Для того, чтобы воспользоваться услугой, вам необходимо
+                    лишь заполнить анкету на сайте, все остальное сервис сделает
+                    за вас, сэкономив вам большое количество времени и сил. Наш
+                    сервис работает со всеми клиентами, нам не важно, какая у
+                    вас кредитная история и имеются ли текущие просрочки.</span
+                  >
+                </div>
+                <a class="button button_secondary" href="#">оформить заявку</a>
+                <div class="index__application-decors">
+                  <div class="index__application-decor-1">
+                    <img
+                      src="./images/index/application/decor_01.png"
+                      alt="decor"
+                    />
+                  </div>
+                  <div class="index__application-decor-2">
+                    <img
+                      src="./images/index/application/decor_02.png"
+                      alt="decor"
+                    />
+                  </div>
+                  <div class="index__application-decor-3">
+                    <img
+                      src="./images/index/application/decor_03.png"
+                      alt="decor"
+                    />
+                  </div>
+                  <div class="index__application-decor-4">
+                    <img
+                      src="./images/index/application/decor_04.png"
+                      alt="decor"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="index__statistics">
+            <div class="container">
+              <picture class="index__statistics-image"
+                ><source
+                  srcset="./images/index/statistics/img_01.png"
+                  type="image/png"
+                  media="(min-width: 576px)" />
+                <img
+                  src="./images/index/statistics/img_01-mobile.png"
+                  alt="image"
+              /></picture>
+            </div>
+          </div>
+          <div class="index__reviews reviews" data-anchor-target="reviews">
+            <div class="container">
+              <div class="reviews__wrapper">
+                <div class="index__title"><h2>отзывы</h2></div>
+                <div class="reviews__slider">
+                  <div class="swiper" data-reviews-slider>
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide">
+                        <div class="reviews__slide">
+                          <div class="reviews__user">
+                            <div class="reviews__avatar image">
+                              <img
+                                src="./images/reviews/icon_01.svg"
+                                alt="avatar"
+                              />
+                            </div>
+                            <span class="reviews__name">Алексей</span>
+                          </div>
+                          <p class="reviews__comment">
+                            Не хватило денег на подарок, пришлось
+                            воспользоваться сервисом.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="reviews__slide">
+                          <div class="reviews__user">
+                            <div class="reviews__avatar image">
+                              <img
+                                src="./images/reviews/icon_02.png"
+                                alt="avatar"
+                              />
+                            </div>
+                            <span class="reviews__name">Алексей</span>
+                          </div>
+                          <p class="reviews__comment">
+                            Не хватило денег на подарок, пришлось
+                            воспользоваться сервисом. Без проблем получил
+                            одобрение от МФО, все быстро, жена довольна.Не
+                            хватило денег на подарок, пришлось воспользоваться
+                            сервисом. Без проблем получил одобрение от МФО, все
+                            быстро, жена довольна.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="reviews__slide">
+                          <div class="reviews__user">
+                            <div class="reviews__avatar image">
+                              <img
+                                src="./images/reviews/icon_01.svg"
+                                alt="avatar"
+                              />
+                            </div>
+                            <span class="reviews__name">Алексей</span>
+                          </div>
+                          <p class="reviews__comment">
+                            Не хватило денег на подарок, пришлось
+                            воспользоваться сервисом. Без проблем получил
+                            одобрение от МФО, все быстро, жена довольна.
+                          </p>
+                        </div>
+                      </div>
+                      <div class="swiper-slide">
+                        <div class="reviews__slide">
+                          <div class="reviews__user">
+                            <div class="reviews__avatar image">
+                              <img
+                                src="./images/reviews/icon_01.svg"
+                                alt="avatar"
+                              />
+                            </div>
+                            <span class="reviews__name">Алексей</span>
+                          </div>
+                          <p class="reviews__comment">
+                            Не хватило денег на подарок, пришлось
+                            воспользоваться сервисом. Без проблем получил
+                            одобрение от МФО, все быстро, жена довольна.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="index__questions questions"
+            data-anchor-target="questions"
+          >
+            <div class="container">
+              <div class="questions__wrapper">
+                <div class="questions__title index__title">
+                  <h2>вопрос-ответ</h2>
+                </div>
+                <div class="questions__items" data-ac>
+                  <div class="questions__item" data-ac-item>
+                    <div class="questions__button" data-ac-button>
+                      <span>Как долго обрабатывается заявка?</span>
+                      <div class="questions__icon">
+                        <svg>
+                          <use
+                            href="./images/sprite.svg#plus"
+                            xlink:href="./images/sprite.svg#plus"
+                          ></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="questions__answer"
+                      data-ac-body
+                      style="display: none"
+                    >
+                      Заявка на займ обрабатывается от нескольких секунд<br />до
+                      15 минут в самых редких случаях
+                    </div>
+                  </div>
+                  <div class="questions__item" data-ac-item>
+                    <div class="questions__button" data-ac-button>
+                      <span>Как погасить полученный займ?</span>
+                      <div class="questions__icon">
+                        <svg>
+                          <use
+                            href="./images/sprite.svg#plus"
+                            xlink:href="./images/sprite.svg#plus"
+                          ></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="questions__answer"
+                      data-ac-body
+                      style="display: none"
+                    >
+                      Заявка на займ обрабатывается от нескольких секунд<br />до
+                      15 минут в самых редких случаях
+                    </div>
+                  </div>
+                  <div class="questions__item" data-ac-item>
+                    <div class="questions__button" data-ac-button>
+                      <span>Как получить деньги?</span>
+                      <div class="questions__icon">
+                        <svg>
+                          <use
+                            href="./images/sprite.svg#plus"
+                            xlink:href="./images/sprite.svg#plus"
+                          ></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="questions__answer"
+                      data-ac-body
+                      style="display: none"
+                    >
+                      Заявка на займ обрабатывается от нескольких секунд<br />до
+                      15 минут в самых редких случаях
+                    </div>
+                  </div>
+                  <div class="questions__item" data-ac-item>
+                    <div class="questions__button" data-ac-button>
+                      <span>География сервиса?</span>
+                      <div class="questions__icon">
+                        <svg>
+                          <use
+                            href="./images/sprite.svg#plus"
+                            xlink:href="./images/sprite.svg#plus"
+                          ></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="questions__answer"
+                      data-ac-body
+                      style="display: none"
+                    >
+                      Заявка на займ обрабатывается от нескольких секунд<br />до
+                      15 минут в самых редких случаях
+                    </div>
+                  </div>
+                  <div class="questions__item" data-ac-item>
+                    <div class="questions__button" data-ac-button>
+                      <span>Как остановить обработку заявки?</span>
+                      <div class="questions__icon">
+                        <svg>
+                          <use
+                            href="./images/sprite.svg#plus"
+                            xlink:href="./images/sprite.svg#plus"
+                          ></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="questions__answer"
+                      data-ac-body
+                      style="display: none"
+                    >
+                      Заявка на займ обрабатывается от нескольких секунд<br />до
+                      15 минут в самых редких случаях
+                    </div>
+                  </div>
+                  <div class="questions__item" data-ac-item>
+                    <div class="questions__button" data-ac-button>
+                      <span>Какова стоимость услуги?</span>
+                      <div class="questions__icon">
+                        <svg>
+                          <use
+                            href="./images/sprite.svg#plus"
+                            xlink:href="./images/sprite.svg#plus"
+                          ></use>
+                        </svg>
+                      </div>
+                    </div>
+                    <div
+                      class="questions__answer"
+                      data-ac-body
+                      style="display: none"
+                    >
+                      Заявка на займ обрабатывается от нескольких секунд<br />до
+                      15 минут в самых редких случаях
+                    </div>
+                  </div>
+                </div>
+                <div class="questions__decors">
+                  <div class="questions__decor-1">
+                    <img src="./images/questions/decor_01.png" alt="decor" />
+                  </div>
+                  <div class="questions__decor-2">
+                    <img src="./images/questions/decor_02.png" alt="decor" />
+                  </div>
+                  <div class="questions__decor-3">
+                    <img src="./images/questions/decor_03.png" alt="decor" />
+                  </div>
+                  <div class="questions__decor-4">
+                    <img src="./images/questions/decor_04.png" alt="decor" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="index__rules">
+            <div class="container">
+              <div class="index__rules-wrapper">
+                <div class="index__title">
+                  <h2>Правила оплаты<br />и безопасность платежей</h2>
+                  <span
+                    >К оплате принимаются карты МИР, VISA, MasterCard.Ваши
+                    данные надежно защищены. При передаче используется
+                    защищенное соединение. Платежей осуществляются с
+                    использованием технология 3D-Secure и в соответсвии со
+                    стандартами PCI DSS.</span
+                  >
+                </div>
+                <picture
+                  ><source
+                    srcset="./images/index/rules/logo_01.svg"
+                    type="image/svg+xml"
+                    media="(min-width: 576px)" />
+                  <img src="./images/index/rules/logo_01-mobile.svg" alt="logo"
+                /></picture>
+              </div>
+            </div>
+          </div>
+          <div class="index__calc index-calc">
+            <div class="container">
+              <div class="index-calc__wrapper">
+                <span class="index-calc__subtitle">Наш Займ</span>
+                <div class="index-calc__title index__title">
+                  <h2>рассчитай стоимость</h2>
+                </div>
+                <div class="index-calc__calc calc">
+                  <div class="calc__wrapper">
+                    <form class="calc__form">
+                      <div class="calc__range">
+                        <div class="calc__sum">
+                          <span>Сумма займа</span>
+                          <strong data-range-slider-sum>25 000 ₽</strong>
+                        </div>
+                        <div
+                          class="calc__range-slider"
+                          data-range-slider="sum"
+                        ></div>
+                      </div>
+                      <div class="calc__dates" data-calc-dates>
+                        <div class="calc__date shadow shadow_no-hover">
+                          5 дней
+                        </div>
+                        <div class="calc__date shadow shadow_no-hover">
+                          5 дней
+                        </div>
+                        <div class="calc__date shadow shadow_no-hover">
+                          15 недель
+                        </div>
+                        <div class="calc__date shadow shadow_no-hover">
+                          5 дней
+                        </div>
+                        <div class="calc__date shadow shadow_no-hover">
+                          5 дней
+                        </div>
+                        <div class="calc__date active shadow shadow_no-hover">
+                          10 дней
+                        </div>
+                      </div>
+                      <div class="calc__output">
+                        К возврату <span data-range-slider-sum>25 000₽</span> до
+                        <span data-calc-date-value>17.10.2023</span>
+                      </div>
+                      <button class="calc__button button button" type="submit">
+                        оформить заявку
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
-      <footer class="footer"><h1 class="footer__title">Footer</h1></footer>
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__wrapper">
+            <a class="footer__logo" href="./index.html"
+              ><img src="./images/footer/logo_01.svg" alt="logo"
+            /></a>
+            <div class="footer__contacts">
+              <a class="footer__contact" href="tel:+9999999"
+                >8 (495) 845-27-71</a
+              >
+              <a class="footer__contact" href="mailto:support@unocredit.ru"
+                >support@unocredit.ru</a
+              >
+              <a class="footer__contact" href="#">Отписаться</a>
+              <a class="footer__contact" href="#">Обратная связь</a>
+            </div>
+            <div class="footer__actions">
+              <span class="footer__action" data-anchor="features"
+                >Почему мы?</span
+              >
+              <div class="footer__action-divide"></div>
+              <a class="footer__action" href="#">О сервисе</a>
+              <div class="footer__action-divide"></div>
+              <span class="footer__action" data-anchor="questions"
+                >Вопросы - ответы</span
+              >
+            </div>
+            <p class="footer__text">
+              Услугу платного подбора займов "CreditPanda" предоставляет ИП
+              Пермякова О. Б. (ОГРНИП 320028000015241, ИНН: 026602783987) ИП
+              Пермякова О. Б. зарегистрирован в реестре РКН, как оператор
+              персональных данных (регистр. номер: 2-20-007218). Выдача займов у
+              партнеров осуществляется в российских рублях, на банковский счет,
+              наличными или на карту, гражданам Российской Федерации. Сервис не
+              относится к финансовым учреждениям, не является кредитором или
+              банком и не несет ответственности за заключенные впоследствие
+              клиентами и партерами договоры кредитования. Доступные суммы
+              займов: от 1 000 рублей до 100 000 рублей. Срок займа: от 62 дней,
+              при процентной ставке: от 0% до 365% годовых. Находясь на сайте, а
+              так же совершая любые действия на сайте, Вы принимаете условия
+              договора публичной оферты, соглашение о применении рекуррентных
+              платежей, соглашение о хранении учетных данных владельца
+              банковской карты, политику обработки персональных данных, тарифами
+              сервиса, а так же даете согласие на получение рекламных материалов
+              и <a href="#">на обработку персональных данных.</a>
+            </p>
+            <p class="footer__text">
+              Режим работы службы поддержки: 10:00 - 19:00, без выходных. По
+              любым вопросам вы можете связаться со специалистами сервиса по
+              электронной почте support@creditpanda.ru или по телефону 8 (495)
+              374-68-08. Стоимость услуги — 1945 RUB. Наличие платной услуги не
+              гарантирует Вам получение займа. Клиент может отказаться от услуги
+              подбора займов самостоятельно, в любое время -
+              <a href="#">Отказаться от услуг.</a>
+            </p>
+            <div class="footer__items">
+              <span class="footer__label">Наши партнёры</span>
+              <p class="footer__item">
+                Екапуста ООО МКК «Русинтерфинанс» Лицензия ЦБ РФ: 2120754001243
+                Адрес: 630055, Новосибирская область, г. Новосибирск, ул.
+                Гнесиных, д. 10/1, оф. 202
+              </p>
+              <p class="footer__item">
+                ЗАЙМЕР ООО МФК «Займер» Лицензия ЦБ РФ: 651303532004088 Адрес:
+                630099, Новосибирская область, г. Новосибирск, ул. Октябрьская
+                Магистраль, д. 3, оф. 906
+              </p>
+              <p class="footer__item">
+                Money Man ООО МФК "Мани Мен" Лицензия ЦБ РФ: 2110177000478
+                Адрес: 121096, г. Москва, ул. Василисы Кожиной, д. 1, оф. Д13
+              </p>
+              <p class="footer__item">
+                Zaymigo ООО «Займиго МФК» Лицензия ЦБ РФ: 651303322004222 Адрес:
+                603093, Нижегородская область, г. Нижний Новгород, ул.
+                Ковровская, д. 21А, пом. 603
+              </p>
+              <p class="footer__item">
+                МигКредит ООО МФК «МигКредит» Лицензия ЦБ РФ: 2110177000037
+                Адрес: 127018, г. Москва, Сущевский вал, д. 5, стр. 3
+              </p>
+              <p class="footer__item">
+                Webbankir ООО МФК «ВЭББАНКИР» Лицензия ЦБ РФ: 2120177002077
+                Адрес: 125466, г. Москва, ул. Соколово-Мещерская, д. 29, оф. 308
+              </p>
+              <p class="footer__item">
+                Kviku, ООО МФК “ЭйрЛоанс”, Лицензия ЦБ РФ: 651303045003744.
+                Адрес: г. Москва, 123112 Пресненская наб. 8, стр. 1
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="./js/index.js"></script>
   </body>
