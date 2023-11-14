@@ -137,24 +137,24 @@ h6 {
 }
 
 @font-face {
-    font-family: "PPMori";
+    font-family: "Gilroy";
   font-style: normal;
-  font-weight: 100;
-  src: local("PPMori"), local("PPMori"), url("../fonts/pp-mori/PPMori-Extralight.woff2") format("woff2"), url("../fonts/pp-mori/PPMori-Extralight.woff") format("woff"), url("../fonts/pp-mori/PPMori-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  src: local("Gilroy"), local("Gilroy"), url("../fonts/gilroy/Gilroy-UltraLight.woff2") format("woff2"), url("../fonts/gilroy/Gilroy-UltraLight.woff") format("woff"), url("../fonts/gilroy/Gilroy-UltraLight.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "PPMori";
+    font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
-  src: local("PPMori"), local("PPMori"), url("../fonts/pp-mori/PPMori-Regular.woff2") format("woff2"), url("../fonts/pp-mori/PPMori-Regular.woff") format("woff"), url("../fonts/pp-mori/PPMori-Regular.ttf") format("truetype");
+  src: local("Gilroy"), local("Gilroy"), url("../fonts/gilroy/Gilroy-Regular.woff2") format("woff2"), url("../fonts/gilroy/Gilroy-Regular.woff") format("woff"), url("../fonts/gilroy/Gilroy-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "PPMori";
+    font-family: "Gilroy";
   font-style: normal;
   font-weight: 600;
-  src: local("PPMori"), local("PPMori"), url("../fonts/pp-mori/PPMori-SemiBold.woff2") format("woff2"), url("../fonts/pp-mori/PPMori-SemiBold.woff") format("woff"), url("../fonts/pp-mori/PPMori-SemiBold.ttf") format("truetype");
+  src: local("Gilroy"), local("Gilroy"), url("../fonts/gilroy/Gilroy-Semibold.woff2") format("woff2"), url("../fonts/gilroy/Gilroy-Semibold.woff") format("woff"), url("../fonts/gilroy/Gilroy-Semibold.ttf") format("truetype");
 }
 
 @font-face {
@@ -173,13 +173,13 @@ h6 {
 /*
   Имена шрифтов:
 
-  PPMori
+  Gilroy
   Montserrat
   Roboto
   SoyuzGrotesk
 */
 body {
-    font-family: "PPMori", sans-serif;
+    font-family: "Gilroy";
     font-size: 1.125rem;
     line-height: normal;
     font-weight: 400;
@@ -359,7 +359,7 @@ body.no-scroll {
     cursor: pointer;
     font-size: 0.875rem;
     font-style: normal;
-    font-weight: 100;
+    font-weight: 200;
     line-height: 1.2;
     text-align: center;
     color: var(--color-03);
@@ -1773,7 +1773,7 @@ body.no-scroll {
 .index-calc__subtitle {
     display: block;
     font-size: 0.75rem;
-    font-weight: 100;
+    font-weight: 200;
     text-align: center;
     color: var(--color-01);
 }
