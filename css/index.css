@@ -18,6 +18,8 @@
     --color-11: #5c5c5c;
     --color-12: #b1b1b1;
     --color-13: #626262;
+    --color-14: #e0e0e0;
+    --color-15: #270f69;
     --zIndex: 999;
 }
 
@@ -293,6 +295,7 @@ body.no-scroll {
     --_padding-inline: var(--container-pi, 15px);
     margin: 0 auto;
     padding: 0 var(--_padding-inline);
+    width: 100%;
     max-width: calc(var(--_max-width-container) + var(--_padding-inline) * 2);
 }
 

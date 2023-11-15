@@ -18,6 +18,8 @@
     --color-11: #5c5c5c;
     --color-12: #b1b1b1;
     --color-13: #626262;
+    --color-14: #e0e0e0;
+    --color-15: #270f69;
     --zIndex: 999;
 }
 
@@ -293,6 +295,7 @@ body.no-scroll {
     --_padding-inline: var(--container-pi, 15px);
     margin: 0 auto;
     padding: 0 var(--_padding-inline);
+    width: 100%;
     max-width: calc(var(--_max-width-container) + var(--_padding-inline) * 2);
 }
 
@@ -747,5 +750,741 @@ body.no-scroll {
 @media (min-width: 500px) {
     .footer__action-divide {
         margin: 0 20px;
+    }
+}
+
+/*
+<div class="inputs">
+...
+
+  <div class="inputs__label">
+    <span>Просто текст</span>
+  </div>
+  <div class="inputs__label-error">
+    <span>Текст с ошибкой</span>
+  </div>
+</div>
+*/
+.inputs {
+    --input-fs: 18px;
+    --input-height: 42px;
+    --input-border-clr: var(--color-03);
+    --input-pi: 15px;
+    --input-clr: var(--color-01);
+    --input-bg: var(--color-06);
+    --input-placeholder-clr: var(--color-04);
+    --input-error-label-fs: 16px;
+    --input-error-clr: var(--color-10);
+}
+
+.inputs.error {
+    --input-border-clr: var(--input-error-clr);
+}
+
+.inputs.error .inputs__label-error {
+    display: block;
+}
+
+.inputs__label,
+.inputs__label-error {
+    font-size: var(--input-error-label-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2;
+}
+
+.inputs__label span,
+.inputs__label-error span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    box-orient: vertical;
+}
+
+.inputs__label {
+    color: var(--input-clr);
+}
+
+.inputs__label-error {
+    display: none;
+    color: var(--input-error-clr);
+}
+
+/*
+<div class="inputs input">
+  <div class="input__wrapper">
+    <div class="input__group">
+      <input
+        class="input__target"
+        type="text"
+        placeholder="Ввадите фамилию"
+        data-autocomplete
+      />
+    </div>
+
+    <div class="inputs__label">
+      <span>Просто текст</span>
+    </div>
+    <div class="inputs__label-error">
+      <span>Для получения договора и документов об оплате</span>
+    </div>
+  </div>
+</div>
+*/
+.input__target {
+    width: 100%;
+    height: var(--input-height);
+    padding: 0 var(--input-pi);
+    display: block;
+    font-size: var(--input-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--input-clr);
+    border: 1px solid var(--input-border-clr);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    box-orient: vertical;
+}
+
+.input__target::-moz-placeholder {
+    color: var(--input-clr);
+    -moz-transition: color 0.15s linear;
+    transition: color 0.15s linear;
+}
+
+.input__target::placeholder {
+    color: var(--input-clr);
+    transition: color 0.15s linear;
+}
+
+.input__target:focus::-moz-placeholder {
+    color: var(--input-placeholder-clr);
+}
+
+.input__target:focus::placeholder {
+    color: var(--input-placeholder-clr);
+}
+
+/*
+<div class="inputs select">
+  <div class="select__wrapper">
+    <div class="select__body">
+      <select class="js-example-basic-single" name="state" data-select>
+        <option value="Москва">Москва</option>
+        <option value="Санкт-Петербург">Санкт-Петербург</option>
+        <option value="Екатеренбург">Екатеренбург</option>
+      </select>
+
+      <div class="select__icon">
+        <svg>
+          <use
+            href="../images/sprite.svg#plus"
+            xlink:href="../images/sprite.svg#plus"
+          ></use>
+        </svg>
+      </div>
+    </div>
+
+    <div class="inputs__label">
+      <span>Просто текст</span>
+    </div>
+    <div class="inputs__label-error">
+      <span>Для получения договора и документов об оплате</span>
+    </div>
+  </div>
+</div>
+
+*/
+.select {
+    --select-icon-size: 19px;
+    --select-icon-svg-size: 11px;
+    --select-icon-right: var(--input-pi);
+    --select-icon-clr: var(--input-clr);
+}
+
+.select.error .select2 .select2-selection--single .select2-selection__rendered {
+    --input-border-clr: var(--input-error-clr);
+}
+
+.select__body {
+    position: relative;
+}
+
+.select__icon {
+    width: 1em;
+    height: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--select-icon-size);
+    border-radius: 50%;
+    background: var(--color-14);
+    position: absolute;
+    top: calc(50% - var(--select-icon-size) / 2);
+    right: var(--select-icon-right);
+    pointer-events: none;
+}
+
+.select__icon svg {
+    flex: 0 0 var(--select-icon-svg-size);
+    width: var(--select-icon-svg-size);
+    height: var(--select-icon-svg-size);
+    display: block;
+    fill: var(--select-icon-clr);
+    transition: transform 0.15s linear;
+}
+
+.select .select2 {
+    display: block;
+}
+
+.select .select2.select2-container--open + .select__icon svg {
+    transform: rotate(45deg);
+}
+
+.select .select2 .select2-selection--single {
+    height: auto;
+    background: none;
+    border-radius: 0 !important;
+    border: none;
+}
+
+.select .select2 .select2-selection--single .select2-selection__rendered {
+    padding: 0 calc(var(--select-icon-size) + var(--select-icon-right) + 10px) 0 var(--input-pi);
+    font-size: var(--input-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(var(--input-height) - 2px);
+    color: var(--input-clr);
+    border: 1px solid var(--input-border-clr);
+    border-radius: 0 !important;
+    background: var(--input-bg);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -moz-box;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+    box-orient: vertical;
+    white-space: normal;
+    transition: color 0.2s linear, border 0.2s linear;
+}
+
+.select .select2 .select2-selection--single .select2-selection__arrow {
+    display: none;
+}
+
+.select2-dropdown.select__dropdown {
+    --select-option-clr: var(--color-04);
+    --select-option-clr-hover: var(--color-01);
+    padding: 8px var(--input-pi);
+    border-radius: 0 !important;
+    border: 1px solid var(--input-border-clr) !important;
+    overflow: hidden;
+    z-index: calc(var(--zIndex) - 1);
+    background: var(--input-bg);
+}
+
+.select2-dropdown.select__dropdown.select2-dropdown--below {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.select2-dropdown.select__dropdown.select2-dropdown--above {
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.select__dropdown .select2-search.select2-search--dropdown {
+    display: none;
+}
+
+.select2-dropdown.select__dropdown .select2-results__option.select2-results__option--selectable {
+    padding: 2px 0;
+    font-size: var(--input-fs);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--select-option-clr);
+    background: none !important;
+    transition: color 0.15s linear;
+}
+
+.select2-dropdown.select__dropdown .select2-results__option.select2-results__option--selectable.select2-results__option--selected {
+    color: var(--select-option-clr-hover);
+}
+
+@media (any-hover: hover) {
+    .select2-dropdown.select__dropdown .select2-results__option.select2-results__option--selectable:hover {
+        color: var(--select-option-clr-hover);
+    }
+}
+
+/*
+<div class="checkbox">
+  <div class="checkbox__wrapper">
+    <label class="checkbox__label">
+      <input class="checkbox__input" type="checkbox" />
+      <div class="checkbox__icon">
+        <img src="../images/UI/checkbox/icon_01.svg" alt="icon" />
+      </div>
+      <p class="checkbox__text">
+        Я ознакомлен и согласен со <span>следующим</span>
+      </p>
+    </label>
+  </div>
+</div>
+*/
+.checkbox {
+    --checkbox-fs: 1rem;
+    --chekcbox-icon-size: 25px;
+    --checkbox-icon-img-size: 17px;
+}
+
+.checkbox__wrapper {
+    display: flex;
+}
+
+.checkbox__label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (any-hover: hover) {
+    .checkbox__label:hover .checkbox__icon {
+        background: var(--color-08);
+    }
+}
+
+.checkbox__input {
+    position: fixed;
+    top: -100%;
+    left: -100%;
+    z-index: -999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.checkbox__input:checked + .checkbox__icon {
+    background: var(--color-06);
+}
+
+.checkbox__input:checked + .checkbox__icon img {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.checkbox__icon {
+    flex: 0 0 var(--chekcbox-icon-size);
+    width: var(--chekcbox-icon-size);
+    height: var(--chekcbox-icon-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-09);
+    background: var(--color-06);
+    transition: background 0.3s linear;
+}
+
+.checkbox__icon img {
+    flex: 0 0 var(--checkbox-icon-img-size);
+    width: var(--checkbox-icon-img-size);
+    height: var(--checkbox-icon-img-size);
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition-property: opacity, visibility, top, transform;
+    transition-duration: 0.2s;
+}
+
+.checkbox__text {
+    padding: 0 0 0 0.438em;
+    display: block;
+    font-size: var(--checkbox-fs);
+    font-weight: 400;
+    line-height: 1.2;
+    font-style: normal;
+    color: var(--color-03);
+}
+
+.checkbox__text span {
+    color: var(--color-09);
+}
+
+@media (any-hover: hover) {
+    .checkbox__text span:hover {
+        text-decoration: underline;
+    }
+}
+
+/*
+<div class="title">
+  <h2>Заголовок</h2>
+
+  <p>Подзаголовок. <span>Выделить</span></p>
+</div>
+*/
+.title {
+    --title-fs: 2.25rem;
+    margin: 0 0 25px 0;
+    display: grid;
+    gap: 10px;
+}
+
+.title h2,
+.title h3,
+.title h4 {
+    display: block;
+    font-family: "SoyuzGrotesk";
+    font-size: var(--title-fs);
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1;
+    color: var(--color-01);
+}
+
+@media (min-width: 1200px) {
+    .title {
+        --title-fs: 3rem;
+        margin: 0 0 36px 0;
+        gap: 36px;
+    }
+}
+
+.title p {
+    display: block;
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 1.5;
+    color: var(--color-03);
+}
+
+.title p span {
+    color: var(--color-10);
+}
+
+@media (min-width: 576px) {
+    .title p {
+        font-size: 1rem;
+    }
+}
+
+.title_medium {
+    --title-fs: 1.25rem;
+    margin: 0 0 15px 0;
+}
+
+@media (min-width: 1200px) {
+    .title_medium {
+        --title-fs: 1.75rem;
+        margin: 0 0 24px 0;
+        gap: 24px;
+    }
+}
+
+.autocomplete-suggestions {
+    --autocomplete-clr: var(--color-04);
+    padding: 8px var(--input-pi);
+    overflow: auto;
+    border: 1px solid var(--input-border-clr);
+    border-radius: 0;
+    background: var(--input-bg);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete-suggestion {
+    padding: 2px 0;
+    overflow: hidden;
+    cursor: pointer;
+    font-size: var(--input-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--autocomplete-clr);
+    transition: color 0.15s linear;
+}
+
+@media (any-hover: hover) {
+    .autocomplete-suggestion:hover {
+        color: var(--input-clr);
+    }
+}
+
+.autocomplete-suggestions strong {
+    font-weight: 400;
+    color: var(--input-clr);
+}
+
+.autocomplete-group {
+    padding: 2px 5px;
+}
+
+.autocomplete-group strong {
+    display: block;
+    border-bottom: 1px solid #000;
+}
+
+/*
+<div class="autocomplete-suggestions">
+    <div class="autocomplete-group"><strong>NHL</strong></div>
+    <div class="autocomplete-suggestion autocomplete-selected">...</div>
+    <div class="autocomplete-suggestion">...</div>
+    <div class="autocomplete-suggestion">...</div>
+</div>
+*/
+.insides-fullscreen {
+    --_fullscreen: calc(var(--fullscreen) - var(--header-height));
+    min-height: var(--_fullscreen);
+    padding: 20px 0 70px;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .insides-fullscreen {
+        padding: 70px 0;
+    }
+}
+
+@media (min-width: 576px) {
+    .insides-container {
+        padding: 35px 20px;
+        margin: 0 auto;
+        border: 1px solid var(--color-01);
+        background: var(--color-06);
+    }
+}
+
+@media (min-width: 768px) {
+    .insides-container {
+        padding: 48px 35px;
+    }
+}
+
+.contact-details {
+    --gap: 10px;
+}
+
+@media (min-width: 576px) {
+    .contact-details {
+        background: var(--color-05);
+    }
+}
+
+@media (min-width: 768px) {
+    .contact-details {
+        --gap: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .contact-details {
+        --gap: 25px;
+    }
+}
+
+.contact-details__container {
+    max-width: 912px;
+}
+
+@media (max-width: 576px) {
+    .contact-details__title h2,
+  .contact-details__title h3,
+  .contact-details__title h4 {
+        text-align: left;
+    }
+}
+
+.contact-details__form {
+    display: grid;
+    gap: var(--gap);
+}
+
+.contact-details__user {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap);
+}
+
+.contact-details__contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--gap);
+}
+
+.contact-details__checkbox {
+    padding: 10px 0 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .contact-details__checkbox {
+        padding: 0;
+    }
+}
+
+.contact-details__submit {
+    justify-self: center;
+    max-width: 20.625rem;
+}
+
+.popup-layout {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: calc(var(--zIndex) + 1);
+    background: rgba(64, 64, 64, 0.8);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+.popup-layout.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: calc(var(--zIndex) + 2);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+
+.popup.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.popup.active .popup__body {
+    transform: scale(1);
+}
+
+.popup__wrapper {
+    min-height: 100%;
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup__body {
+    width: 100%;
+    max-width: 35.625rem;
+    padding: 35px 25px;
+    margin: 0 auto;
+    display: grid;
+    gap: 25px;
+    border: 1px solid var(--color-01);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+    background: var(--color-06);
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.2s linear;
+}
+
+.popup__close {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.popup__close svg {
+    flex: 0 0 18px;
+    height: 18px;
+    height: 18px;
+    transform: rotate(45deg);
+    fill: var(--color-01);
+    transition: fill 0.15s linear;
+}
+
+@media (any-hover: hover) {
+    .popup__close:hover svg {
+        fill: var(--color-10);
+    }
+}
+
+.popup__title {
+    padding: 0 30px 0 0;
+    margin: 0;
+}
+
+.popup__title h2,
+.popup__title h3,
+.popup__title h4 {
+    text-align: left;
+}
+
+.popup__text {
+    display: block;
+    font-size: 1rem;
+    line-height: 1.313;
+    color: var(--color-03);
+}
+
+.popup__text a {
+    color: var(--color-15);
+}
+
+@media (any-hover: hover) {
+    .popup__text a:hover {
+        text-decoration: underline;
+    }
+}
+
+.popup__actions {
+    display: grid;
+    justify-items: center;
+    gap: 15px;
+}
+
+.popup__button {
+    width: 100%;
+    max-width: 20.625rem;
+}
+
+.popup__cancel {
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.313;
+    color: var(--color-09);
+    cursor: pointer;
+}
+
+@media (any-hover: hover) {
+    .popup__cancel:hover {
+        text-decoration: underline;
     }
 }
