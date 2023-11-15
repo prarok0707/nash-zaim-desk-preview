@@ -20,6 +20,7 @@
     --color-13: #626262;
     --color-14: #e0e0e0;
     --color-15: #270f69;
+    --header-mobile-bg: rgba(255, 255, 255, 0.85);
     --zIndex: 999;
 }
 
@@ -447,7 +448,7 @@ body.no-scroll {
     left: 0;
     right: 0;
     z-index: var(--zIndex);
-    background: rgba(var(--color-06), 0.2);
+    background: var(--header-mobile-bg);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     transition: background 0.2s linear, -webkit-backdrop-filter 0.2s linear;
