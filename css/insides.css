@@ -1130,6 +1130,145 @@ body.no-scroll {
 }
 
 /*
+<div class="inputs radio">
+  <div class="radio__wrapper">
+    <span class="radio__label">Ваш пол</span>
+
+    <div class="radio__actions">
+      <label class="radio__action">
+        <input class="radio__input" name="sex" type="radio" value="male" />
+        <span class="radio__button">мужской</span>
+      </label>
+
+      <label class="radio__action">
+        <input class="radio__input" name="sex" type="radio" value="female" />
+        <span class="radio__button">женский</span>
+      </label>
+    </div>
+  </div>
+</div>
+*/
+.radio {
+    --radio-label-fs: var(--input-fs);
+    --radio-button-fs: var(--input-fs);
+    --radio-bg: var(--color-06);
+    --radio-bg-hover: var(--color-08);
+    --radio-bg-active: var(--color-07);
+}
+
+.radio__label {
+    margin: 0 0 5px 0;
+    display: block;
+    font-size: var(--radio-label-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--input-clr);
+}
+
+.radio__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.radio__action {
+    display: block;
+}
+
+.radio__input {
+    position: fixed;
+    top: -100%;
+    left: -100%;
+    z-index: -999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.radio__input:checked + .radio__button {
+    background: var(--radio-bg-active);
+    box-shadow: 2px 2px 0px 0px var(--color-01);
+}
+
+.radio__button {
+    min-width: 6.5em;
+    height: 1.75em;
+    padding: 0 0.938em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "SoyuzGrotesk";
+    font-size: var(--radio-button-fs);
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--input-clr);
+    cursor: pointer;
+    background: var(--radio-bg);
+    transition: background 0.15s linear, box-shadow 0.15s linear;
+    border-radius: 3.75em;
+    border: 1px solid var(--input-border-clr);
+    box-shadow: 2px 2px 0px 0px var(--color-01);
+}
+
+@media (any-hover: hover) {
+    .radio__button:hover {
+        background: var(--radio-bg-hover);
+        box-shadow: 0px 0px 0px 0px var(--color-01);
+    }
+}
+
+/*
+<div class="inputs textarea">
+  <div class="textarea__wrapper">
+    <div class="textarea__group">
+      <textarea class="textarea__target" placeholder="Комментарий"></textarea>
+    </div>
+
+    <div class="inputs__label">
+      <span>Просто текст</span>
+    </div>
+    <div class="inputs__label-error">
+      <span>Для получения договора и документов об оплате</span>
+    </div>
+  </div>
+</div>
+*/
+.textarea__target {
+    width: 100%;
+    height: 6.667em;
+    padding: 0.556em var(--input-pi);
+    display: block;
+    font-size: var(--input-fs);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--input-clr);
+    border: 1px solid var(--input-border-clr);
+    resize: none;
+}
+
+.textarea__target::-moz-placeholder {
+    color: var(--input-clr);
+    -moz-transition: color 0.15s linear;
+    transition: color 0.15s linear;
+}
+
+.textarea__target::placeholder {
+    color: var(--input-clr);
+    transition: color 0.15s linear;
+}
+
+.textarea__target:focus::-moz-placeholder {
+    color: var(--input-placeholder-clr);
+}
+
+.textarea__target:focus::placeholder {
+    color: var(--input-placeholder-clr);
+}
+
+/*
 <div class="title">
   <h2>Заголовок</h2>
 
@@ -1339,7 +1478,321 @@ body.no-scroll {
 
 .contact-details__submit {
     justify-self: center;
-    max-width: 20.625rem;
+}
+
+@media (min-width: 470px) {
+    .contact-details__submit {
+        max-width: 20.625rem;
+    }
+}
+
+.passport-details {
+    --gap: 10px;
+}
+
+@media (min-width: 576px) {
+    .passport-details {
+        background: var(--color-05);
+    }
+}
+
+@media (min-width: 768px) {
+    .passport-details {
+        --gap: 24px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .passport-details {
+        padding: 100px 0 120px 0;
+    }
+}
+
+.passport-details__container {
+    max-width: 57rem;
+}
+
+.passport-details__form {
+    display: grid;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .passport-details__form {
+        gap: var(--gap);
+    }
+}
+
+.passport-details__group {
+    display: grid;
+    gap: var(--gap);
+}
+
+.passport-details__title {
+    padding: 0 0 5px 0;
+    margin: 0;
+}
+
+@media (max-width: 576px) {
+    .passport-details__title h2,
+  .passport-details__title h3,
+  .passport-details__title h4 {
+        text-align: left;
+    }
+}
+
+@media (min-width: 768px) {
+    .passport-details__title {
+        padding: 0;
+    }
+}
+
+.passport-details__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gap);
+}
+
+.passport-details__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: var(--gap);
+}
+
+.passport-details__submit {
+    justify-self: center;
+}
+
+@media (min-width: 470px) {
+    .passport-details__submit {
+        max-width: 20.625rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .data-check {
+        background: var(--color-05);
+    }
+}
+
+.data-check__container {
+    max-width: 42.188rem;
+    display: grid;
+    gap: 35px;
+}
+
+.data-check__title {
+    margin: 0;
+}
+
+.data-check__title p span {
+    display: block;
+}
+
+.data-check__image {
+    justify-self: center;
+    max-width: 267px;
+}
+
+.data-check__button {
+    justify-self: center;
+    display: none;
+}
+
+.data-check__button.visible {
+    display: flex;
+}
+
+@media (min-width: 470px) {
+    .data-check__button {
+        max-width: 20.625rem;
+    }
+}
+
+.data-check__info {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (min-width: 420px) {
+    .data-check__info {
+        grid-template-columns: minmax(250px, 400px);
+    }
+}
+
+@media (min-width: 576px) {
+    .data-check__info {
+        gap: 15px;
+    }
+}
+
+.data-check__label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.111em;
+    color: var(--color-03);
+}
+
+@media (min-width: 768px) {
+    .data-check__label {
+        font-size: 1.125rem;
+    }
+}
+
+.data-check__info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    font-size: 0.875rem;
+    line-height: 1.111em;
+    color: var(--color-03);
+}
+
+.data-check__info-row strong {
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .data-check__info-row {
+        font-size: 1.125rem;
+    }
+}
+
+.data-check__group {
+    display: grid;
+    justify-items: center;
+    gap: 15px;
+}
+
+.data-check__progressbar {
+    width: 100%;
+    height: 16px;
+    max-width: 277px;
+    border-radius: 60px;
+    background: var(--color-06);
+    box-shadow: 2px 2px 0px 0px var(--color-01);
+    overflow: hidden;
+    position: relative;
+}
+
+.data-check__progressbar::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    border-radius: inherit;
+    border: 1px solid var(--color-01);
+}
+
+@media (min-width: 576px) {
+    .data-check__progressbar {
+        max-width: none;
+        height: 32px;
+    }
+}
+
+.data-check__progress {
+    border-radius: inherit;
+    border: 1px solid var(--color-01);
+    background: var(--color-07);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: transform 0.1s linear;
+}
+
+.data-chekc__group-sublabel {
+    display: block;
+    font-size: 1.125rem;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.111em;
+    color: var(--color-03);
+}
+
+.data-check__percent {
+    display: block;
+    font-size: clamp(64px, 3.077rem + 4.1vw, 128px);
+    font-size: clamp(4rem, 3.077rem + 4.1vw, 8rem);
+    font-style: normal;
+    font-weight: 600;
+    text-align: center;
+    line-height: 0.75;
+    color: var(--color-03);
+}
+
+.data-check__items {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media (min-width: 576px) {
+    .data-check__items {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+.data-check__item {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    line-height: 1.667;
+    color: var(--color-01);
+}
+
+.data-check__item span {
+    padding: 0 0.667em 0 0;
+}
+
+.data-check__item.checked .data-check__icon {
+    animation: none;
+}
+
+.data-check__item.checked .data-check__icon .data-check__icon-loading {
+    display: none;
+}
+
+.data-check__item.checked .data-check__icon .data-check__icon-loaded {
+    display: block;
+}
+
+.data-check__icon {
+    flex: 0 0 auto;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.data-check__icon-loading {
+    width: 26px;
+}
+
+.data-check__icon-loaded {
+    width: 24px;
+    display: none;
 }
 
 .popup-layout {
