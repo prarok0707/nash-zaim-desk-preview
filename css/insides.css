@@ -1384,6 +1384,151 @@ body.no-scroll {
     <div class="autocomplete-suggestion">...</div>
 </div>
 */
+.offer {
+    display: block;
+}
+
+.offer__wrapper {
+    height: 100%;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--color-01);
+    background: var(--color-06);
+}
+
+.offer__main {
+    margin: 0 0 25px 0;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+}
+
+.offer__logo {
+    width: 100%;
+    max-width: 280px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.offer__logo img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+}
+
+.offer__sum {
+    display: block;
+    font-family: "SoyuzGrotesk";
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    color: var(--color-01);
+}
+
+.offer__embed {
+    padding: 5px 0.938em;
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.313;
+    color: var(--color-03);
+    border-radius: 3.75em;
+    border: 1px solid var(--color-03);
+}
+
+.offer__button {
+    max-width: 21.25rem;
+    margin: auto 0 0 0;
+}
+
+.insides {
+    --gap: 10px;
+}
+
+@media (min-width: 576px) {
+    .insides {
+        background: var(--color-05);
+    }
+}
+
+@media (min-width: 768px) {
+    .insides {
+        --gap: 15px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .insides {
+        --gap: 25px;
+    }
+}
+
+@media (min-width: 576px) {
+    .insides__container {
+        max-width: 30rem;
+    }
+}
+
+.insides__label {
+    margin: 0 0 20px 0;
+    display: block;
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 1.2;
+    color: var(--color-03);
+}
+
+.insides__inputs {
+    display: grid;
+    gap: 10px;
+}
+
+.insides__action {
+    align-self: center;
+    margin: 1.071em auto 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: var(--color-09);
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.insides__action svg {
+    flex: 0 0 1.286em;
+    width: 1.286em;
+    height: 1.286em;
+    margin: 0 0.571em 0 0;
+    display: block;
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+@media (any-hover: hover) {
+    .insides__action:hover {
+        color: var(--color-01);
+    }
+}
+
+.insides__submit {
+    margin: 25px 0 0 0;
+}
+
+@media (min-width: 768px) {
+    .insides__submit {
+        margin: 35px 0 0 0;
+    }
+}
+
 .insides-fullscreen {
     --_fullscreen: calc(var(--fullscreen) - var(--header-height));
     min-height: var(--_fullscreen);
@@ -1795,6 +1940,278 @@ body.no-scroll {
     display: none;
 }
 
+.identification {
+    --negetiv-mi: calc(var(--container-pi) - var(--container-pi) * 2);
+    --gap: 10px;
+}
+
+@media (min-width: 576px) {
+    .identification {
+        background: var(--color-05);
+    }
+}
+
+.identification__container {
+    max-width: 535px;
+}
+
+.identification__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.identification__form-body {
+    padding: 30px var(--container-pi) var(--container-pi);
+    margin: 0 var(--negetiv-mi) 15px var(--negetiv-mi);
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-01);
+    border-bottom: 1px solid var(--color-01);
+    background: var(--color-07);
+}
+
+@media (min-width: 576px) {
+    .identification__form-body {
+        margin: 0 0 25px 0;
+        border: 1px solid var(--color-01);
+    }
+}
+
+@media (min-width: 576px) {
+    .identification__form-body {
+        margin: 0 0 35px 0;
+    }
+}
+
+.identification__items {
+    margin: 0 0 35px 0;
+    display: grid;
+    gap: var(--gap);
+}
+
+.identification__row {
+    display: grid;
+    grid-template-columns: 1fr 7.5rem;
+    gap: var(--gap);
+}
+
+@media (min-width: 768px) {
+    .identification__row {
+        grid-template-columns: 1fr 9.375rem;
+    }
+}
+
+.identification__action {
+    align-self: flex-start;
+    font-size: 14px;
+    line-height: 1.2;
+    color: var(--color-09);
+    cursor: pointer;
+}
+
+@media (any-hover: hover) {
+    .identification__action:hover {
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: 470px) {
+    .identification__submit {
+        align-self: center;
+        max-width: 20.625rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .get-offers {
+        background: var(--color-05);
+    }
+}
+
+.get-offers__title {
+    max-width: 24.375rem;
+    padding: 0 0 35px 0;
+    margin: 0 auto;
+}
+
+.get-offers__title .title {
+    margin: 0;
+}
+
+@media (min-width: 576px) {
+    .get-offers__title {
+        padding: 20px 0 35px 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .get-offers__title {
+        padding: 45px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .get-offers__title {
+        padding: 100px 0 64px 0;
+    }
+}
+
+.get-offers__wrapper {
+    padding: 35px 0 55px 0;
+    border-top: 1px solid var(--color-01);
+    background: var(--color-07);
+}
+
+@media (min-width: 768px) {
+    .get-offers__wrapper {
+        padding: 60px 0 70px 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .get-offers__wrapper {
+        padding: 80px 0 90px 0;
+    }
+}
+
+.get-offers__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.get-offers__items {
+    margin: 0 0 35px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 25px;
+}
+
+@media (min-width: 470px) {
+    .get-offers__items {
+        grid-template-columns: minmax(280px, 330px);
+    }
+}
+
+@media (min-width: 768px) {
+    .get-offers__items {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-content: normal;
+        grid-auto-rows: 1fr;
+    }
+}
+
+@media (min-width: 992px) {
+    .get-offers__items {
+        margin: 0 0 50px 0;
+    }
+}
+
+@media (min-width: 470px) {
+    .get-offers__more {
+        align-self: center;
+        max-width: 20.625rem;
+    }
+}
+
+.signin {
+    --negetiv-mi: calc(var(--container-pi) - var(--container-pi) * 2);
+}
+
+@media (min-width: 576px) {
+    .signin {
+        background: var(--color-05);
+    }
+}
+
+@media (min-width: 1200px) {
+    .signin {
+        padding: 100px 0 120px 0;
+    }
+}
+
+.signin__container {
+    max-width: 32.188rem;
+}
+
+.signin__form {
+    display: grid;
+    gap: 35px;
+}
+
+.signin__title {
+    margin: 0;
+}
+
+.signin__items {
+    padding: 30px var(--container-pi);
+    margin: 0 var(--negetiv-mi);
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-01);
+    border-bottom: 1px solid var(--color-01);
+    background: var(--color-07);
+}
+
+@media (min-width: 576px) {
+    .signin__items {
+        margin: 0;
+        border: 1px solid var(--color-01);
+    }
+}
+
+.signin__input {
+    margin: 0 0 10px 0;
+}
+
+.signin__action {
+    align-self: center;
+    margin: 1.071em 0 0 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    line-height: 1.2;
+    color: var(--color-09);
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.signin__action svg {
+    flex: 0 0 1.286em;
+    width: 1.286em;
+    height: 1.286em;
+    margin: 0 0.571em 0 0;
+    display: block;
+    fill: transparent;
+    stroke: currentColor;
+    stroke-width: 1.5px;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+
+button.signin__action,
+a.signin__action {
+    transition: color 0.15s linear;
+}
+
+@media (any-hover: hover) {
+    button.signin__action:hover,
+  a.signin__action:hover {
+        color: var(--color-01);
+    }
+}
+
+.signin__submit {
+    justify-self: center;
+}
+
+@media (min-width: 470px) {
+    .signin__submit {
+        max-width: 20.625rem;
+    }
+}
+
 .popup-layout {
     width: 100%;
     height: 100%;
@@ -1850,7 +2267,7 @@ body.no-scroll {
 .popup__body {
     width: 100%;
     max-width: 35.625rem;
-    padding: 35px 25px;
+    padding: 25px;
     margin: 0 auto;
     display: grid;
     gap: 25px;
@@ -1860,6 +2277,12 @@ body.no-scroll {
     position: relative;
     transform: scale(0.9);
     transition: transform 0.2s linear;
+}
+
+@media (min-width: 768px) {
+    .popup__body {
+        padding: 35px 25px;
+    }
 }
 
 .popup__close {
