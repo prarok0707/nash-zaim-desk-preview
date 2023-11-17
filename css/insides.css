@@ -20,6 +20,8 @@
     --color-13: #626262;
     --color-14: #e0e0e0;
     --color-15: #270f69;
+    --color-16: #383838;
+    --color-17: #696969;
     --header-mobile-bg: rgba(255, 255, 255, 0.85);
     --zIndex: 999;
 }
@@ -568,6 +570,11 @@ body.no-scroll {
     font-weight: 700;
     text-align: center;
     line-height: normal;
+}
+
+.header-mobile__action.active[data-tab-button],
+.header-mobile__link.active[data-tab-button] {
+    color: var(--color-17);
 }
 
 .header-mobile__action {
