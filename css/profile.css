@@ -553,10 +553,10 @@ body.no-scroll {
 }
 
 .header-mobile__actions {
+    width: 100%;
     margin: 0 0 16px 0;
     overflow: auto;
     display: grid;
-    justify-items: center;
     gap: 16px;
 }
 

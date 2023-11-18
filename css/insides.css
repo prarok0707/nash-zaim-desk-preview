@@ -553,10 +553,10 @@ body.no-scroll {
 }
 
 .header-mobile__actions {
+    width: 100%;
     margin: 0 0 16px 0;
     overflow: auto;
     display: grid;
-    justify-items: center;
     gap: 16px;
 }
 
@@ -2036,7 +2036,7 @@ body.no-scroll {
 }
 
 .get-offers__title {
-    max-width: 24.375rem;
+    max-width: 36.25rem;
     padding: 0 0 35px 0;
     margin: 0 auto;
 }
@@ -2054,12 +2054,6 @@ body.no-scroll {
 @media (min-width: 768px) {
     .get-offers__title {
         padding: 45px 0;
-    }
-}
-
-@media (min-width: 1200px) {
-    .get-offers__title {
-        padding: 100px 0 64px 0;
     }
 }
 
