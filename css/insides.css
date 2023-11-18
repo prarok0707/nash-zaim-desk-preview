@@ -2223,7 +2223,7 @@ a.signin__action {
     background: rgba(64, 64, 64, 0.8);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 5s linear, visibility 5s linear;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
 }
 
 .popup-layout.active {
