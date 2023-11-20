@@ -1314,7 +1314,7 @@ body.no-scroll {
     display: block;
     font-size: 0.875rem;
     text-align: center;
-    line-height: 1.5;
+    line-height: 1.25;
     color: var(--color-03);
 }
 
@@ -2047,13 +2047,7 @@ body.no-scroll {
 
 @media (min-width: 576px) {
     .get-offers__title {
-        padding: 20px 0 35px 0;
-    }
-}
-
-@media (min-width: 768px) {
-    .get-offers__title {
-        padding: 45px 0;
+        padding: 25px 0;
     }
 }
 
@@ -2065,13 +2059,7 @@ body.no-scroll {
 
 @media (min-width: 768px) {
     .get-offers__wrapper {
-        padding: 60px 0 70px 0;
-    }
-}
-
-@media (min-width: 1200px) {
-    .get-offers__wrapper {
-        padding: 80px 0 90px 0;
+        padding: 50px 0 60px 0;
     }
 }
 
