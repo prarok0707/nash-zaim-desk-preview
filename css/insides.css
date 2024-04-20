@@ -1984,7 +1984,7 @@ body.no-scroll {
     }
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
     .identification__form-body {
         margin: 0 0 35px 0;
     }
